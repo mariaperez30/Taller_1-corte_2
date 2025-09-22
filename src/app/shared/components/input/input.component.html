@@ -1,3 +1,10 @@
-<p>
-  input works!
-</p>
+<ion-input style="border-bottom: 1px solid rgba(111, 0, 255, 0.694) " 
+[label]="label" 
+[type]="type" 
+[clearInput]="clear"
+[placeholder]="placeholder" 
+labelPlacement="floating" 
+[value]="control.value" 
+(keyup)="doWrite($event)" >
+
+</ion-input>

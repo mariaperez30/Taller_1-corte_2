@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
+import { IUser } from 'src/app/inerfaces/IUser';
+import { User } from 'src/app/shared/services/user/user';
 
 
 @Component({
@@ -19,7 +21,7 @@ export class LoginPage implements OnInit {
 
  public loginForm!:FormGroup;
 
-  constructor() {
+  constructor(private readonly userSrv : User) {
     this.initForm();
    }
 
@@ -30,6 +32,7 @@ export class LoginPage implements OnInit {
   public doLogin(){
 
     console.log(this.loginForm.value);
+    this.userSrv.register(this.loginForm.value);
     this.loginForm.reset();
   }
 

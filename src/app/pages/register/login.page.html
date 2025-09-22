@@ -1,0 +1,12 @@
+<ion-content [fullscreen]="true">
+  <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+    <ion-card>
+      <app-input [control]="name"    labelPlacement="floating" label="Name" type="text" [clear]="false" placeholder="Maria"></app-input>
+      <app-input [control]="lastName" labelPlacement="floating" label="Last name" type="text" placeholder="Perez"></app-input>
+      <app-input [control]="email" labelPlacement="floating" label="Email" type="email" [clear]="false" placeholder="name@gmail.com"></app-input>
+      <app-input [control]="password" labelPlacement="floating" label="Password" type="password" placeholder="*********"></app-input>
+      <app-button value="Register" type="submit" [disabled]="loginForm.invalid"></app-button>
+    </ion-card>
+  </form>
+</ion-content>
+
